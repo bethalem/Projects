@@ -1,0 +1,57 @@
+--Q1
+
+select eventdate,
+       series,
+  sum(starts) As Starts
+from [dbo].[site_starts_table$]
+group by eventdate,
+         series
+order by eventdate
+
+
+--Q2
+
+select sst.eventdate,
+       stt.site_type,
+  sum(starts) As Starts
+From [dbo].[site_starts_table$] sst
+left join [dbo].[site_type_table$] stt
+on sst.site_type_id = stt.site_type_id
+group by sst.eventdate,
+        stt.site_type
+order by sst.eventdate
+   
+   
+--Q3    
+
+select series,
+       Avg(starts) As avg_starts
+From [dbo].[site_starts_table$]
+group by series,eventdate
+order by series;
+
+--Q4
+
+with cte1
+As
+( select   sst.eventdate,
+           snt.site_name,
+      sum(sst.starts) starts
+   from [dbo].[site_starts_table$] sst
+        left join [dbo].[site_name_table$] snt
+        on snt.site_name_id = sst.site_name_id
+        group by sst.eventdate,snt.site_name
+),
+cte2
+ AS
+ (
+    SELECT eventdate,
+      site_name,
+           DENSE_RANK() OVER(PARTITION BY eventdate ORDER BY starts DESC) AS RowNumber
+        FROM cte1
+)
+SELECT eventdate,
+  site_name
+FROM cte2
+WHERE RowNumber = 1;
+
