@@ -1,1 +1,1 @@
-### A portfolio of projects made up of SQL queries, Python Scripts, Machine Learning Projects and PBI Reports I have worked on.
+### A portfolio of projects made up of Python Scripts, SQL queries, Machine Learning Projects and Data Visualization Reports I have worked on.
