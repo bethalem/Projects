@@ -1,7 +1,7 @@
 /*
-    Name: Bethlehem Alem
-    DTSC660: Data and Database Management with SQL
-    Assignment 5
+   
+Data and Database Management with SQL
+   
 */
 
 --------------------------------------------------------------------------------
