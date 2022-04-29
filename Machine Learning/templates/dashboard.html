@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Airfare Prediction System</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        
+    </head>
+    <body class="overflow-y-hidden">
+
+        <!-- For loop data-splide='{"type":"loop"}' -->
+        <div class="splide" >
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="px-4">
+                            <div class="h-96 w-full z-0">
+                                <div class="bg-gradient-to-b from-white to-purple-200 h-full w-full rounded-b-3xl text-center py-6">
+                                    <h2 class="text-purple-600 text-2xl text-bold font-medium">Airfare Prediction System</h2>
+                                    <p class="text-xl font-medium mt-12 text-neutral-600">Predicted price: {{ predicted_val }}</p>
+                                    <div class="bg-purple-300 w-48 h-0.5 mx-auto rounded mt-3"></div>
+                                </div>
+                            </div>
+                
+                            <div class="-my-48 mb-10 mx-auto flex flex-col justify-center items-center h-auto ">
+                                <div class="w-7/12 h-96 rounded-3xl bg-white mx-auto sectionShadow overflow-hidden ">
+                                    <div class="w-full h-full p-6 grid gap-6">
+                                        <img src="{{ hist_image }}" alt="Tk Carrier Image">
+                                    </div>  
+                                </div>
+                                <p class="w-7/12 mx-auto mt-4 pl-2 text-lg text-teal-600 font-medium leading-6 text-center">Different Histograms of the dataset</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="px-4">
+                            <div class="h-96 w-full z-0">
+                                <div class="bg-gradient-to-b from-white to-purple-200 h-full w-full rounded-b-3xl text-center py-6">
+                                    <h2 class="text-purple-600 text-2xl text-bold font-medium">Airfare Prediction System</h2>
+                                    <p class="text-xl font-medium mt-12 text-neutral-600">Predicted price: {{ predicted_val }}</p>
+                                    <div class="bg-purple-300 w-48 h-0.5 mx-auto rounded mt-3"></div>
+                                </div>
+                            </div>
+                
+                            <div class="-my-48 mb-10 mx-auto flex flex-col justify-center items-center h-auto ">
+                                <div class="w-7/12 h-96 rounded-3xl bg-white mx-auto sectionShadow overflow-hidden ">
+                                    <div class="w-full h-full p-6 grid gap-6">
+                                        <img src="{{ tk_image }}" alt="Tk Carrier Image">
+                                    </div>  
+                                </div>
+                                <p class="w-7/12 mx-auto mt-4 pl-2 text-lg text-teal-600 font-medium leading-6 text-center">Count of TkCarrier</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        
+            <!-- Add the progress bar element -->
+            <div class="my-slider-progress">
+                <div class="my-slider-progress-bar"></div>
+            </div>
+        </div>
+
+    <script>
+        var splide = new Splide( '.splide' );
+        var bar    = splide.root.querySelector( '.my-slider-progress-bar' );
+        
+        // Update the bar width:
+        splide.on( 'mounted move', function () {
+            var end = splide.Components.Controller.getEnd() + 1;
+            bar.style.width = String( 100 * ( splide.index + 1 ) / end ) + '%';
+        } );
+        
+        splide.mount();
+
+        function handleFiles(event) {
+            var files = event.target.files;
+            $("#srcUpload").attr("src", URL.createObjectURL(files[0]));
+            document.getElementById("audioUpload").load();
+        }
+        
+        document.getElementById("upload").addEventListener("change", handleFiles, false);
+        document.getElementById("upload").addEventListener("change", audioplayback, false);
+
+        if($('#srcUpload').attr('src') == ""){
+            $("#audioUpload").addClass('hidden');
+        }
+
+        function audioplayback(event){
+            if($('#srcUpload').attr('src').length != 0){
+                $("#audioUpload").removeClass('hidden');
+            }
+        }
+    </script>
+    </body>
+</html>
