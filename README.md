@@ -1,6 +1,6 @@
 ### A portfolio of projects made up of Python Scripts, SQL queries, Machine Learning Projects and Data Visualization Reports I have worked on.
 
-### Air Fare Price Prediction - Using Flask
+### Airfare Price Prediction - Using Flask
  This project aims to collect and analyze flight data to accurately predict prices for flights from various attributes. Flask was used to deploy the machine leaning model and Decission tree model was used to predict the data. 
  
  ### Installation
