@@ -17,6 +17,6 @@ Also check if you have installed virtualenv. If not, install it with follosing l
     >   flask run
 
 ### Preview
-![Screen Shot 2022-04-29 at 11 38 07 AM](https://user-images.githubusercontent.com/85418036/166006538-0ca3c3f7-8999-4450-8eb9-7ac907d544a0.png)
-![Screen Shot 2022-04-29 at 11 39 06 AM](https://user-images.githubusercontent.com/85418036/166006578-c5c00b74-6ec6-477e-8b97-014b57c0ffb8.png)
-![Screen Shot 2022-04-29 at 11 40 21 AM](https://user-images.githubusercontent.com/85418036/166006607-84c6211a-aa20-4308-a728-d1b106175a73.png)
+![Screen Shot 2022-04-29 at 11 38 07 AM](https://user-images.githubusercontent.com/85418036/166007267-13e9b2d1-53c0-4857-870e-5e113ba3c9c4.png)
+![Screen Shot 2022-04-29 at 11 39 06 AM](https://user-images.githubusercontent.com/85418036/166007286-a87c5c9b-f6d5-4790-a744-de2fd9f87b0a.png)
+![Screen Shot 2022-04-29 at 11 40 21 AM](https://user-images.githubusercontent.com/85418036/166007307-8e57a836-a34c-4520-b5a5-eea27868218e.png)
